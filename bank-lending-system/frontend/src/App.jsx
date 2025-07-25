@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.jsx';
-import Navbar from './components/Navbar.jsx';
+import Navbar from './components/Navbar/Navbar.jsx';
 import Signup from './components/Signup.jsx';
 import Login from './components/Login.jsx';
 import CreateLoan from './components/CreateLoan.jsx';
