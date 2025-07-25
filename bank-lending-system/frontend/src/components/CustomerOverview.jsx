@@ -52,11 +52,11 @@ const CustomerOverview = () => {
           {overview.loans.map((loan) => (
             <tr key={loan.loan_id}>
               <td>{loan.loan_id}</td>
-              <td>${loan.principal.toFixed(2)}</td>
-              <td>${loan.total_amount.toFixed(2)}</td>
-              <td>${loan.total_interest.toFixed(2)}</td>
-              <td>${loan.emi_amount.toFixed(2)}</td>
-              <td>${loan.amount_paid.toFixed(2)}</td>
+              <td>Rs.{loan.principal.toFixed(2)}</td>
+              <td>Rs.{loan.total_amount.toFixed(2)}</td>
+              <td>Rs.{loan.total_interest.toFixed(2)}</td>
+              <td>Rs.{loan.emi_amount.toFixed(2)}</td>
+              <td>Rs.{loan.amount_paid.toFixed(2)}</td>
               <td>{loan.emis_left}</td>
             </tr>
           ))}
