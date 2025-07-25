@@ -17,7 +17,7 @@ const LoanLedger = () => {
 
     const fetchLedger = async () => {
       try {
-        const response = await axios.get('/api/v1/loans/ledger', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/loans/ledger`, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setLedger(response.data);

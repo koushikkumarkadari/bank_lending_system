@@ -16,8 +16,8 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/v1/auth/signup', formData);
-      const { token, customer_id } = await axios.post('/api/v1/auth/login', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/auth/signup`, formData);
+      const { token, customer_id } = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/auth/login`, {
         email: formData.email,
         password: formData.password,
       }).then(res => res.data);

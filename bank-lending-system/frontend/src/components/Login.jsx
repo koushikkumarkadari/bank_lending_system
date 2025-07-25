@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/v1/auth/login', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/auth/login`, formData);
       login(response.data.token, response.data.customer_id);
       setMessage('Login successful!');
       navigate('/create-loan');

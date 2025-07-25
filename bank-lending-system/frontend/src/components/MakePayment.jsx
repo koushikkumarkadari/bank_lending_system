@@ -21,7 +21,7 @@ const MakePayment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`/api/v1/loans/${loan_id}/payments`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/loans/${loan_id}/payments`, {
         amount: parseFloat(formData.amount),
         payment_type: formData.payment_type,
       }, {

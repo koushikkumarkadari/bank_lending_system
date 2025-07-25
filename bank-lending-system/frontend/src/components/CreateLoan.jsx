@@ -21,7 +21,7 @@ const CreateLoan = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/v1/loans', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/loans`, {
         loan_amount: parseFloat(formData.loan_amount),
         loan_period_years: parseInt(formData.loan_period_years),
         interest_rate_yearly: parseFloat(formData.interest_rate_yearly),
