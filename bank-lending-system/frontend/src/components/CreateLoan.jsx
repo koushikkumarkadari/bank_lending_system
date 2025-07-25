@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext.jsx';
@@ -12,11 +12,13 @@ const CreateLoan = () => {
   const [message, setMessage] = useState('');
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  if (!user) {
+  useEffect(() => {
+    if (!user) {
     navigate('/login');
     return null;
   }
+  }, [navigate, user]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
