@@ -52,7 +52,7 @@ const LoanLedger = () => {
           {ledger.loans.map((loan) => (
             <tr key={loan.loan_id}>
               <td>{loan.loan_id}</td>
-              <td>Rs.{loan.principal.toFixed(2)}</td>
+              <td>Rs.{loan.principal.toFixed(2)}</td> 
               <td>Rs.{loan.total_amount.toFixed(2)}</td>
               <td>Rs.{loan.monthly_emi.toFixed(2)}</td>
               <td>Rs.{loan.amount_paid.toFixed(2)}</td>
