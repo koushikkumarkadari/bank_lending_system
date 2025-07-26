@@ -9,11 +9,13 @@ const Login = () => {
     password: '',
   });
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false); // Add loading state
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loader
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/auth/login`, formData);
       login(response.data.token, response.data.customer_id);
@@ -21,6 +23,8 @@ const Login = () => {
       navigate('/create-loan');
     } catch (error) {
       setMessage(error.response?.data?.error || 'Error during login');
+    } finally {
+      setLoading(false); // Stop loader
     }
   };
 
@@ -36,6 +40,7 @@ const Login = () => {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
+            disabled={loading} // Disable input during loading
           />
         </div>
         <div className="form-group">
@@ -45,10 +50,18 @@ const Login = () => {
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             required
+            disabled={loading} // Disable input during loading
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? (
+            <span className="loader"></span>
+          ) : (
+            'Login'
+          )}
+        </button>
       </form>
+      
     </div>
   );
 };
