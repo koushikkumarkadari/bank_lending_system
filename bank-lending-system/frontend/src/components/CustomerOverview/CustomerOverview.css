@@ -1,0 +1,223 @@
+.overview-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.overview-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.summary-card {
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.total-loans {
+  font-size: 1.3rem;
+  color: #1976d2;
+  margin: 0;
+}
+
+.overview-container h3 {
+  color: #333;
+  margin: 25px 0 15px;
+  font-size: 1.4rem;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+.loading {
+  color: #666;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.overview-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  background-color: #fff;
+}
+
+.overview-table thead {
+  background-color: #1976d2;
+  color: white;
+}
+
+.overview-table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overview-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s;
+}
+
+.overview-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.overview-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.overview-table tbody tr:nth-child(even):hover {
+  background-color: #f0f0f0;
+}
+
+.overview-table td {
+  padding: 14px 12px;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .overview-container {
+    padding: 15px;
+  }
+  
+  .overview-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .summary-card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .total-loans {
+    font-size: 1.2rem;
+  }
+  
+  .overview-container h3 {
+    font-size: 1.2rem;
+    margin: 20px 0 10px;
+  }
+  
+  .table-wrapper {
+    box-shadow: none;
+  }
+  
+  .overview-table {
+    min-width: 100%;
+    border: none;
+  }
+  
+  .overview-table thead {
+    display: none;
+  }
+  
+  .overview-table,
+  .overview-table tbody,
+  .overview-table tr,
+  .overview-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  .overview-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .overview-table td {
+    text-align: right;
+    padding: 12px 15px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .overview-table td:last-child {
+    border-bottom: none;
+  }
+  
+  .overview-table td::before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .overview-container {
+    padding: 10px;
+  }
+  
+  .overview-container h2 {
+    font-size: 1.3rem;
+  }
+  
+  .summary-card {
+    padding: 12px;
+  }
+  
+  .total-loans {
+    font-size: 1.1rem;
+  }
+  
+  .overview-container h3 {
+    font-size: 1.1rem;
+  }
+  
+  .overview-table td {
+    padding: 10px 12px;
+  }
+  
+  .overview-table td::before {
+    left: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 320px) {
+  .overview-container {
+    padding: 8px;
+  }
+  
+  .overview-container h2 {
+    font-size: 1.2rem;
+  }
+  
+  .overview-table tr {
+    margin-bottom: 15px;
+  }
+}

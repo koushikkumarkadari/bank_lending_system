@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
-import Signup from './components/Signup.jsx';
-import Login from './components/Login.jsx';
-import CreateLoan from './components/CreateLoan.jsx';
-import MakePayment from './components/MakePayment.jsx';
-import LoanLedger from './components/LoanLedger.jsx';
-import CustomerOverview from './components/CustomerOverview.jsx';
-import LoanTransactions from './components/LoanTransactions.jsx';
+import Signup from './components/Signup/Signup.jsx';
+import Login from './components/Login/Login.jsx';
+import CreateLoan from './components/CreateLoan/CreateLoan.jsx';
+import MakePayment from './components/MakePayment/MakePayment.jsx';
+import LoanLedger from './components/LoanLedger/LoanLedger.jsx';
+import CustomerOverview from './components/CustomerOverview/CustomerOverview.jsx';
+import LoanTransactions from './components/LoanTransactions/LoanTransactions.jsx';
 import './App.css';
 
 function App() {

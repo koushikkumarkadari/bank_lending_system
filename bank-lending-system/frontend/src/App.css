@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+
   padding: 2rem;
 }
 
@@ -71,24 +72,5 @@ button:disabled {
   border-radius: 4px;
 }
 
-.ledger-container,
-.overview-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}

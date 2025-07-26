@@ -1,0 +1,232 @@
+.ledger-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ledger-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* Ensures table doesn't get too compressed */
+  background-color: #fff;
+}
+
+.ledger-table thead {
+  background-color: #1976d2;
+  color: white;
+}
+
+.ledger-table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ledger-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s;
+}
+
+.ledger-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.ledger-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.ledger-table tbody tr:nth-child(even):hover {
+  background-color: #f0f0f0;
+}
+
+.ledger-table td {
+  padding: 14px 12px;
+  font-size: 0.95rem;
+}
+
+.actions-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px !important;
+}
+
+.action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.payment-btn {
+  background-color: #4caf50;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.payment-btn:hover:not(:disabled) {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.transactions-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.transactions-btn:hover {
+  background-color: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .ledger-container {
+    padding: 15px;
+  }
+  
+  .ledger-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .table-wrapper {
+    box-shadow: none;
+  }
+  
+  .ledger-table {
+    min-width: 100%;
+    border: none;
+  }
+  
+  .ledger-table thead {
+    display: none;
+  }
+  
+  .ledger-table,
+  .ledger-table tbody,
+  .ledger-table tr,
+  .ledger-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  .ledger-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .ledger-table td {
+    text-align: right;
+    padding: 12px 15px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .ledger-table td:last-child {
+    border-bottom: none;
+  }
+  
+  .ledger-table td::before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .actions-cell {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px !important;
+  }
+  
+  .action-btn {
+    padding: 10px 15px;
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
+  
+  .payment-btn {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .ledger-container {
+    padding: 10px;
+  }
+  
+  .ledger-container h2 {
+    font-size: 1.3rem;
+  }
+  
+  .actions-cell {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .action-btn {
+    width: 70%;
+    margin-bottom: 8px;
+  }
+  
+  .action-btn:last-child {
+    margin-bottom: 0;
+  }
+
+}
