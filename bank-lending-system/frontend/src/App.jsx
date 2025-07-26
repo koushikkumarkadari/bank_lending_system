@@ -7,6 +7,7 @@ import CreateLoan from './components/CreateLoan.jsx';
 import MakePayment from './components/MakePayment.jsx';
 import LoanLedger from './components/LoanLedger.jsx';
 import CustomerOverview from './components/CustomerOverview.jsx';
+import LoanTransactions from './components/LoanTransactions.jsx';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/make-payment/:loan_id" element={<MakePayment />} />
               <Route path="/ledger" element={<LoanLedger />} />
               <Route path="/overview" element={<CustomerOverview />} />
+              <Route path="/loans/:loan_id/transactions" element={<LoanTransactions />} />
             </Routes>
           </div>
         </div>

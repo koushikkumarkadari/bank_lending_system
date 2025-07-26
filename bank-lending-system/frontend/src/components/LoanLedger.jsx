@@ -46,6 +46,7 @@ const LoanLedger = () => {
             <th>EMIs Left</th>
             <th>Status</th>
             <th>Action</th>
+            <th>Transactions</th>
           </tr>
         </thead>
         <tbody>
@@ -64,6 +65,11 @@ const LoanLedger = () => {
                   <button disabled={loan.status === 'PAID_OFF'}>Make Payment</button>
                 </Link>
               </td>
+              <td>
+              <Link to={`/loans/${loan.loan_id}/transactions`}>
+                <button>View Transactions</button>
+              </Link>
+            </td>
             </tr>
           ))}
         </tbody>

@@ -4,6 +4,7 @@ const authMiddleware = require('../middleware/auth');
 const loanController = require('../controllers/loanController');
 
 router.post('/', authMiddleware, loanController.createLoan);
+router.get('/:loan_id/ledger', authMiddleware, loanController.getLoanLedger);
 router.post('/:loan_id/payments', authMiddleware, loanController.makePayment);
 router.get('/ledger', authMiddleware, loanController.getLedger); // Changed to list all loans for user
 

@@ -118,3 +118,35 @@ exports.getLedger = (req, res) => {
     });
   });
 };
+exports.getLoanLedger = (req, res) => {
+     const { loan_id } = req.params;
+     const customer_id = req.customer_id;
+
+     db.get('SELECT * FROM Loans WHERE loan_id = ? AND customer_id = ?', [loan_id, customer_id], (err, loan) => {
+       if (err || !loan) {
+         return res.status(404).json({ error: 'Loan not found or not authorized' });
+       }
+
+       db.all('SELECT payment_id, amount, payment_type, payment_date FROM Payments WHERE loan_id = ?', [loan_id], (err, payments) => {
+         if (err) {
+           return res.status(500).json({ error: 'Failed to fetch payments' });
+         }
+
+         const balance_amount = Math.max(0, loan.total_amount - loan.amount_paid);
+         const emis_left = balance_amount > 0 ? Math.ceil(balance_amount / loan.monthly_emi) : 0;
+
+         res.status(200).json({
+           loan_id,
+           monthly_emi: loan.monthly_emi,
+           balance_amount,
+           emis_left,
+           transactions: payments.map(p => ({
+             payment_id: p.payment_id,
+             amount: p.amount,
+             payment_type: p.payment_type,
+             payment_date: p.payment_date,
+           })),
+         });
+       });
+     });
+   };
